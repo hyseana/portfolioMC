@@ -1,0 +1,87 @@
+/* Nuovo Font Sportivo/Moderno */
+.font-outfit {
+    font-family: 'Outfit', sans-serif;
+}
+
+/* Animazione Fade-in con Intersection Observer */
+.fade-in {
+    
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Gestione dei delay per la griglia progetti */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+
+/* Animazione Marquee per le Competenze (Infinite Scroll) */
+.marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.marquee-content {
+    display: flex;
+    animation: marquee 20s linear infinite;
+}
+
+/* Se l'utente passa col mouse, l'animazione si ferma (opzionale ma UX-friendly) */
+.marquee-content:hover {
+    animation-play-state: paused;
+}
+
+/* Gradient Text */
+.text-gradient {
+    background: linear-gradient(135deg, #34d399, #059669);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Hover Glow per i bottoni */
+.btn-glow:hover {
+    box-shadow: 0 0 25px rgba(16, 185, 129, 0.6);
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } 
+    /* Scorre fino al 50% perché i contenuti sono duplicati per creare il loop perfetto */
+}
+
+/* Miglioramento per togliere la scrollbar visiva dove non necessaria */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f9fafb;
+}
+::-webkit-scrollbar-thumb {
+    background: #10b981; /* Emerald 500 */
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #047857; /* Emerald 700 */
+}
+
+/* FAQ Accordion Transition */
+.faq-content {
+    transition: max-height 0.4s ease-out, padding 0.4s ease, opacity 0.4s ease;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+.faq-content.open {
+    max-height: 500px;
+    opacity: 1;
+}
+
+/* Nasconde elementi specifici all'interno del popup */
+#modal-content .modal-hide {
+    display: none !important;
+}
